@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "backbones": [
+    "googlenet",
+    "resnet50",
+    "inception_v3",
+    "xception",
+    "densenet201",
+    "squeezenet1_1"
+  ],
+  "input_sizes": {
+    "googlenet": 224,
+    "resnet50": 224,
+    "inception_v3": 299,
+    "xception": 299,
+    "densenet201": 224,
+    "squeezenet1_1": 227
+  },
+  "train": {
+    "batch_size": 16,
+    "epochs": 100,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "num_workers": 2
+  },
+  "fusion": {
+    "projection_dim": 512,
+    "projection_epochs": 30,
+    "projection_lr": 0.001,
+    "feature_counts": [
+      128,
+      256,
+      384,
+      512
+    ],
+    "weight_step": 0.1,
+    "reported_weights": {
+      "googlenet": 0.3,
+      "resnet50": 0.1,
+      "inception_v3": 0.2,
+      "xception": 0.1,
+      "densenet201": 0.2,
+      "squeezenet1_1": 0.1
+    }
+  }
+}
